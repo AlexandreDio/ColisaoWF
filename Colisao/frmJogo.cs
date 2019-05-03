@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Colisao
 {
-    public partial class Form1 : Form
+    public partial class frmJogo : Form
     {
         private bool paraEsquerda;
         private bool paraDireita;
@@ -20,7 +20,7 @@ namespace Colisao
         private int pontos = 0;
         private bool temColisao = false;
 
-        public Form1()
+        public frmJogo()
         {
             InitializeComponent();
         }
@@ -62,6 +62,9 @@ namespace Colisao
                         case "coletaveis":
                             pontos++;
                             this.Controls.Remove(item);
+                            break;
+                        case "inimigo":
+                            FinalizaJogo();
                             break;
                     }
                     
@@ -139,6 +142,11 @@ namespace Colisao
         private void Form1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void pbBat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

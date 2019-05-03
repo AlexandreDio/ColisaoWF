@@ -63,6 +63,26 @@ namespace Colisao.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hero_62x122px {
+            get {
+                object obj = ResourceManager.GetObject("Hero_62x122px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hero_62x122px1 {
+            get {
+                object obj = ResourceManager.GetObject("Hero_62x122px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Moeda {
             get {
                 object obj = ResourceManager.GetObject("Moeda", resourceCulture);
