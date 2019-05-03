@@ -83,5 +83,8 @@
   <ItemGroup>
     <None Include="Properties\RedGhost.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Moeda.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

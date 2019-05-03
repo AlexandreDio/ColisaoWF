@@ -17,7 +17,8 @@ namespace Colisao
         private bool paraCima;
         private bool paraBaixo;
         private int velocidade = 10;
-
+        private int pontos = 0;
+        private bool temColisao = false;
 
         public Form1()
         {
@@ -26,41 +27,67 @@ namespace Colisao
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            lblPontos.Text = "Pontos: " + pontos;
+
             if (paraEsquerda)
             {
-                personagem.Left -= velocidade;
+                pbHeroi.Left -= velocidade;
             }
 
             if (paraDireita)
             {
-                personagem.Left += velocidade;
+                pbHeroi.Left += velocidade;
             }
 
             if (paraCima)
             {
-                personagem.Top -= velocidade;
+                pbHeroi.Top -= velocidade;
             }
 
             if (paraBaixo)
             {
-                personagem.Top += velocidade;
+                pbHeroi.Top += velocidade;
             }
 
             foreach (Control item in this.Controls)
             {
-                if (item is PictureBox && (string) item.Tag == "muro")
+                //Verifica colisões entre o herói e demais itens no formulário
+                if (item is PictureBox && VerificaColisao(item, pbHeroi))
                 {
-
-                    if (((PictureBox)item).Bounds.IntersectsWith(personagem.Bounds))
+                    switch (item.Tag)
                     {
-                        timer1.Stop();
-                        personagem.Visible = false;
-                        pnlMsgGameOver.Visible = true;
-                        lblMsgGameOver.Visible = true;
-                        lblMsgGameOver.Text = "GAME OVER";
+                        case "muro":
+                            FinalizaJogo();
+                            break;
+                        case "coletaveis":
+                            pontos++;
+                            this.Controls.Remove(item);
+                            break;
                     }
+                    
                 }
             }
+        }
+
+        private bool VerificaColisao(Control it, PictureBox pb)
+        {
+            if (((PictureBox)it).Bounds.IntersectsWith(pb.Bounds))
+                return true;
+            return false;
+        }
+
+        private void ColetaItens()
+        {
+            pbMoeda.Visible = false;
+            lblPontos.Text += pontos;
+        }
+
+        private void FinalizaJogo()
+        {
+            timer1.Stop();
+            pbHeroi.Visible = false;
+            lblMsgGameOver.Visible = true;
+            lblMsgGameOver.Text = "GAME OVER";
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -107,6 +134,11 @@ namespace Colisao
             {
                 paraBaixo = false;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
