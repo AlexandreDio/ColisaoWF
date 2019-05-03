@@ -29,6 +29,8 @@ namespace Colisao
         {
             lblPontos.Text = "Pontos: " + pontos;
 
+            LimitaTela();
+
             if (paraEsquerda)
             {
                 pbHeroi.Left -= velocidade;
@@ -51,14 +53,11 @@ namespace Colisao
 
             foreach (Control item in this.Controls)
             {
-                //Verifica colisões entre o herói e demais itens no formulário
+                //Verifica se PB e colisões entre o herói e demais itens no formulário
                 if (item is PictureBox && VerificaColisao(item, pbHeroi))
                 {
                     switch (item.Tag)
                     {
-                        case "muro":
-                            FinalizaJogo();
-                            break;
                         case "coletaveis":
                             pontos++;
                             this.Controls.Remove(item);
@@ -66,15 +65,50 @@ namespace Colisao
                         case "inimigo":
                             FinalizaJogo();
                             break;
+
                     }
                     
                 }
             }
+
+            
         }
 
-        private bool VerificaColisao(Control it, PictureBox pb)
+        private void LimitaTela()
         {
-            if (((PictureBox)it).Bounds.IntersectsWith(pb.Bounds))
+            if (pbHeroi.Location.Y > (ClientSize.Height - 71))
+            {
+                pbHeroi.Top = ClientSize.Height - 72;
+
+                //timer1.Stop();
+                //MessageBox.Show(pbHeroi.Location.Y.ToString());
+            }
+
+            if (pbHeroi.Location.Y < 90)
+            { 
+                pbHeroi.Top = 90;
+
+                //timer1.Stop();
+                //MessageBox.Show(pbHeroi.Location.Y.ToString());
+            }
+
+            if (pbHeroi.Location.X < pbHeroi.ClientSize.Width - 30)
+            {
+                pbHeroi.Left = 10;
+            }
+
+            if (pbHeroi.Location.X > 750)
+            {
+                pbHeroi.Left = 750;
+                //timer1.Stop();
+                //MessageBox.Show(pbHeroi.Location.Y.ToString());
+            }
+
+        }
+
+        private bool VerificaColisao(Control controle, PictureBox objogo)
+        {
+            if (((PictureBox)controle).Bounds.IntersectsWith(objogo.Bounds))
                 return true;
             return false;
         }

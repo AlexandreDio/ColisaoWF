@@ -36,7 +36,6 @@
             this.lblMsgGameOver = new System.Windows.Forms.Label();
             this.pbHeroi = new System.Windows.Forms.PictureBox();
             this.pbMoeda = new System.Windows.Forms.PictureBox();
-            this.pbMuro = new System.Windows.Forms.PictureBox();
             this.pbVilao = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,7 +47,6 @@
             this.pnlMsgGameOver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeroi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMoeda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMuro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVilao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -102,7 +100,7 @@
             // pbHeroi
             // 
             this.pbHeroi.Image = ((System.Drawing.Image)(resources.GetObject("pbHeroi.Image")));
-            this.pbHeroi.Location = new System.Drawing.Point(255, 213);
+            this.pbHeroi.Location = new System.Drawing.Point(266, 510);
             this.pbHeroi.Name = "pbHeroi";
             this.pbHeroi.Size = new System.Drawing.Size(52, 87);
             this.pbHeroi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,23 +112,13 @@
             // pbMoeda
             // 
             this.pbMoeda.Image = global::Colisao.Properties.Resources.Moeda;
-            this.pbMoeda.Location = new System.Drawing.Point(219, 423);
+            this.pbMoeda.Location = new System.Drawing.Point(196, 564);
             this.pbMoeda.Name = "pbMoeda";
             this.pbMoeda.Size = new System.Drawing.Size(39, 33);
             this.pbMoeda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMoeda.TabIndex = 4;
             this.pbMoeda.TabStop = false;
             this.pbMoeda.Tag = "coletaveis";
-            // 
-            // pbMuro
-            // 
-            this.pbMuro.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pbMuro.Location = new System.Drawing.Point(782, 175);
-            this.pbMuro.Name = "pbMuro";
-            this.pbMuro.Size = new System.Drawing.Size(100, 295);
-            this.pbMuro.TabIndex = 2;
-            this.pbMuro.TabStop = false;
-            this.pbMuro.Tag = "muro";
             // 
             // pbVilao
             // 
@@ -213,7 +201,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Colisao.Properties.Resources.Moeda;
-            this.pictureBox7.Location = new System.Drawing.Point(37, 380);
+            this.pictureBox7.Location = new System.Drawing.Point(140, 391);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(39, 33);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +225,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbMoeda);
             this.Controls.Add(this.pnlMsgGameOver);
-            this.Controls.Add(this.pbMuro);
             this.Name = "frmJogo";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -247,7 +234,6 @@
             this.pnlMsgGameOver.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeroi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMoeda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMuro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVilao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -262,7 +248,6 @@
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pbMuro;
         private System.Windows.Forms.Panel pnlMsgGameOver;
         private System.Windows.Forms.Label lblMsgGameOver;
         private System.Windows.Forms.PictureBox pbMoeda;
