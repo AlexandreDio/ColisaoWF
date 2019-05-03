@@ -18,7 +18,6 @@ namespace Colisao
         private bool paraBaixo;
         private int velocidade = 10;
         private int pontos = 0;
-        private bool temColisao = false;
 
         public frmJogo()
         {
