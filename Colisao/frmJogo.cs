@@ -28,9 +28,32 @@ namespace Colisao
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblPontos.Text = "Pontos: " + pontos;
-
+            //Lógica para manter o jogador dentro do form
             LimitaTela();
+            MovimentaJogador();
 
+            foreach (Control item in this.Controls)
+            {
+                //Verifica se PB e colisões entre o herói e demais itens no formulário
+                if (item is PictureBox && VerificaColisao(item, pbHeroi))
+                {
+                    switch (item.Tag)
+                    {
+                        case "coletaveis":
+                            pontos++;
+                            this.Controls.Remove(item);
+                            break;
+                        case "inimigo":
+                            FinalizaJogo();
+                            break;
+                    }
+                    
+                }
+            }
+        }
+
+        private void MovimentaJogador()
+        {
             if (paraEsquerda)
             {
                 pbHeroi.Left -= velocidade;
@@ -50,28 +73,6 @@ namespace Colisao
             {
                 pbHeroi.Top += velocidade;
             }
-
-            foreach (Control item in this.Controls)
-            {
-                //Verifica se PB e colisões entre o herói e demais itens no formulário
-                if (item is PictureBox && VerificaColisao(item, pbHeroi))
-                {
-                    switch (item.Tag)
-                    {
-                        case "coletaveis":
-                            pontos++;
-                            this.Controls.Remove(item);
-                            break;
-                        case "inimigo":
-                            FinalizaJogo();
-                            break;
-
-                    }
-                    
-                }
-            }
-
-            
         }
 
         private void LimitaTela()
