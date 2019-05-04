@@ -76,34 +76,17 @@ namespace Colisao
 
         private void LimitaTela()
         {
-            if (pbHeroi.Location.Y > (ClientSize.Height - 71))
-            {
-                pbHeroi.Top = ClientSize.Height - 72;
+            if (pbHeroi.Location.Y > (ClientSize.Height - pnlMsgGameOver.Size.Height))
+                pbHeroi.Top = (ClientSize.Height - pnlMsgGameOver.Size.Height);
 
-                //timer1.Stop();
-                //MessageBox.Show(pbHeroi.Location.Y.ToString());
-            }
+            if (pbHeroi.Location.Y < pnlMsgGameOver.Size.Height)
+                pbHeroi.Top = pnlMsgGameOver.Size.Height;
 
-            if (pbHeroi.Location.Y < 90)
-            { 
-                pbHeroi.Top = 90;
+            if (pbHeroi.Location.X < 0)
+                pbHeroi.Left = 0;
 
-                //timer1.Stop();
-                //MessageBox.Show(pbHeroi.Location.Y.ToString());
-            }
-
-            if (pbHeroi.Location.X < pbHeroi.ClientSize.Width - 30)
-            {
-                pbHeroi.Left = 10;
-            }
-
-            if (pbHeroi.Location.X > 750)
-            {
-                pbHeroi.Left = 750;
-                //timer1.Stop();
-                //MessageBox.Show(pbHeroi.Location.Y.ToString());
-            }
-
+            if (pbHeroi.Location.X > (ClientSize.Width - pbHeroi.Size.Width))
+                pbHeroi.Left = (ClientSize.Width - pbHeroi.Size.Width);
         }
 
         private bool VerificaColisao(Control controle, PictureBox objogo)
@@ -132,24 +115,36 @@ namespace Colisao
             if (e.KeyCode == Keys.Left)
             {
                 paraEsquerda = true;
+                paraDireita = false;
+                paraCima = false;
+                paraBaixo = false;
                 pbHeroi.Image = Properties.Resources.Left;
             }
 
             if (e.KeyCode == Keys.Right)
             {
                 paraDireita = true;
+                paraCima = false;
+                paraBaixo = false;
+                paraEsquerda = false;
                 pbHeroi.Image = Properties.Resources.Right;
             }
 
             if (e.KeyCode == Keys.Up)
             {
                 paraCima = true;
+                paraDireita = false;
+                paraEsquerda = false;
+                paraBaixo = false;
                 pbHeroi.Image = Properties.Resources.Up;
             }
 
             if (e.KeyCode == Keys.Down)
             {
                 paraBaixo = true;
+                paraCima = false;
+                paraDireita = false;
+                paraEsquerda = false;
                 pbHeroi.Image = Properties.Resources.down;
             }
         }

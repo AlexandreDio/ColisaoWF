@@ -110,7 +110,7 @@
             // pbHeroi
             // 
             this.pbHeroi.Image = global::Colisao.Properties.Resources.Right;
-            this.pbHeroi.Location = new System.Drawing.Point(266, 510);
+            this.pbHeroi.Location = new System.Drawing.Point(37, 145);
             this.pbHeroi.Name = "pbHeroi";
             this.pbHeroi.Size = new System.Drawing.Size(92, 87);
             this.pbHeroi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,7 +132,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Colisao.Properties.Resources.Moeda;
-            this.pictureBox6.Location = new System.Drawing.Point(84, 154);
+            this.pictureBox6.Location = new System.Drawing.Point(438, 496);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(39, 33);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,6 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 752);
+            this.Controls.Add(this.pnlMsgGameOver);
             this.Controls.Add(this.pbVilao);
             this.Controls.Add(this.pbHeroi);
             this.Controls.Add(this.pictureBox7);
@@ -221,7 +222,6 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbMoeda);
-            this.Controls.Add(this.pnlMsgGameOver);
             this.Name = "frmJogo";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
