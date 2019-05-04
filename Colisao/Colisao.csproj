@@ -85,6 +85,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Hero_62x122px.gif" />
+    <None Include="Imgs\pink_guy.gif" />
+    <None Include="Imgs\cccc.gif" />
+    <None Include="Imgs\coin.gif" />
+    <None Include="Imgs\coint2.gif" />
+    <None Include="Imgs\down.gif" />
+    <None Include="Imgs\Left.gif" />
+    <None Include="Imgs\red_guy.gif" />
+    <None Include="Imgs\Right.gif" />
+    <None Include="Imgs\Up.gif" />
+    <None Include="Imgs\yellow_guy.gif" />
     <Content Include="Properties\Moeda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

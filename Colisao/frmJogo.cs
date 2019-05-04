@@ -132,21 +132,25 @@ namespace Colisao
             if (e.KeyCode == Keys.Left)
             {
                 paraEsquerda = true;
+                pbHeroi.Image = Properties.Resources.Left;
             }
 
             if (e.KeyCode == Keys.Right)
             {
                 paraDireita = true;
+                pbHeroi.Image = Properties.Resources.Right;
             }
 
             if (e.KeyCode == Keys.Up)
             {
                 paraCima = true;
+                pbHeroi.Image = Properties.Resources.Up;
             }
 
             if (e.KeyCode == Keys.Down)
             {
                 paraBaixo = true;
+                pbHeroi.Image = Properties.Resources.down;
             }
         }
 
@@ -171,16 +175,6 @@ namespace Colisao
             {
                 paraBaixo = false;
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pbBat_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
